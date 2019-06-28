@@ -50,7 +50,7 @@ If you donwload it simply run the command `jupyter notebook neighborhoods_sentim
 
 ## Results
 
-Results are better explained in this [blog post]()
+Results are better explained in this [blog post](https://medium.com/@simone.rigoni01/do-you-want-to-move-to-milan-neighborhoods-sentiment-analysis-using-airbnb-data-72db72ebc070?sk=52ad4741d36bb8a3005b2ad13832d622)
 
 ## Licensing and Acknowledgements
 
