@@ -41,6 +41,8 @@ The dataset is provided by [Airbnb](http://insideairbnb.com/get-the-data.html) a
 * **neighbourhoods.csv**: Neighbourhood list for geo filter. Sourced from city or open source GIS files.
 * **neighbourhoods.geojson**: GeoJSON file of neighbourhoods of the city.
 
+To map the neighbourhood in the dataset to the real neighbourhood I have created the file **quartieri.txt** which contains the real neighbourhood of Milan.
+
 ## Running the code
 
 The code is provided in the Jupyter Notebook _neighborhood_analysis_backup.ipynb_
