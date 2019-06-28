@@ -46,7 +46,7 @@ To map the neighbourhood in the dataset to the real neighbourhood I have created
 ## Running the code
 
 The code is provided in the Jupyter Notebook _neighborhood_analysis_backup.ipynb_
-If you donwload it simply run the command `jupyter notebook neighborhood_analysis.ipynb` in the folder were the file is located.
+If you donwload it simply run the command `jupyter notebook neighborhoods_sentiment_analysis.ipynb` in the folder were the file is located.
 
 ## Results
 
