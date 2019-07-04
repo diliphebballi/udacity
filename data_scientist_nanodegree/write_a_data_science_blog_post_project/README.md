@@ -21,14 +21,14 @@ The goal of this project is to put in practice the technical skills teached duri
 6. Deploy
 
 ## Software and Libraries
-This project uses Python 3.7.2 the following libraries:
-* NumPy
-* Pandas
-* nltk
-* scikit-learn
-* Matplotlib
-* seaborn
-* TextBlob
+This project uses Python 3.7.2 and the following libraries:
+* [NumPy](http://www.numpy.org/)
+* [Pandas](http://pandas.pydata.org)
+* [nltk](https://www.nltk.org/)
+* [scikit-learn](http://scikit-learn.org/stable/)
+* [Matplotlib](http://matplotlib.org/)
+* [seaborn](https://seaborn.pydata.org/)
+* [TextBlob](https://textblob.readthedocs.io/en/dev/)
 * WordCloud
 
 ## Data
@@ -45,7 +45,7 @@ To map the neighbourhood in the dataset to the real neighbourhood I have created
 
 ## Running the code
 
-The code is provided in the Jupyter Notebook _neighborhood_analysis_backup.ipynb_
+The code is provided in the [Jupyter Notebook](http://ipython.org/notebook.html) _neighborhoods_sentiment_analysis.ipynb_
 If you donwload it simply run the command `jupyter notebook neighborhoods_sentiment_analysis.ipynb` in the folder were the file is located.
 
 ## Results
