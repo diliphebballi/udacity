@@ -1,4 +1,5 @@
-Core Curriculum
+# Core Curriculum
+
   1. Term 1
       1. Welcome to the Nanodegree
       2. Supervised Learning
