@@ -12,7 +12,7 @@ This project is part of The [Udacity](https://eu.udacity.com/) Data Scientist Na
     * Disaster Response Pipelines
     * Recommendation Engines
     
-The goal of this project is to build a Python package and upload the package to PyPi. The focus is on apply object-oriented programming and tackle a problem that interests you.
+The goal of this project is to build a Python package and upload the package to PyPi. The focus is on apply object-oriented programming and tackle an interesting problem.
 
 ## Software and Libraries
 This project uses Python 3.7.2 and the following libraries:
