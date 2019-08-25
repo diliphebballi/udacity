@@ -35,6 +35,7 @@ The dataset is provided by [Figure Eight](https://www.figure-eight.com/dataset/c
 
 ## Running the code
 
+<pre>
 |-- disaster_response_pipeline_project
     |-- disaster_response_pipeline
     |   |-- data
@@ -53,7 +54,7 @@ The dataset is provided by [Figure Eight](https://www.figure-eight.com/dataset/c
     |-- db_dump.txt
     |-- commands.txt
     |-- README.md
-    
+</pre>
 All the modules provide the help funcionality provided by [argparse](https://docs.python.org/3/library/argparse.html) module.
     
 
