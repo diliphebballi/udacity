@@ -35,6 +35,8 @@ The dataset is provided by [Figure Eight](https://www.figure-eight.com/dataset/c
 
 ## Running the code
 
+From the project folder run `python dash_disaster_response_pipeline.py` to start the dash application. The default url to connect to it is http://127.0.0.1:8050/.
+
 <pre>
 |-- disaster_response_pipeline_project
     |-- disaster_response_pipeline
@@ -56,8 +58,7 @@ The dataset is provided by [Figure Eight](https://www.figure-eight.com/dataset/c
     |-- README.md
 </pre>
 
-From the project folder run `python dash_disaster_response_pipeline.py` to start the dash application. The default url to connect to it is http://127.0.0.1:8050/.
-By deafult if the application does not find the 'trained_classifier.pkl' pickle file to load the model it will check also if the database 'db.sqlite3' present and if not process the data and finaly train the model (save it in 'classifier/trained_classifier.pkl') to get the application ready to classify messages in real time.
+If the application does not find the **trained_classifier.pkl** pickle file to load the model it will check also if the database **db.sqlite3** present and if not process the data and finaly train the model (save it in **classifier/trained_classifier.pkl**) to get the application ready to classify messages in real time.
 
 ![Flowchart](images/flowchart.png)
 
