@@ -1,5 +1,5 @@
 # Train the model and save it in a pickle file
-# python train_classifier.py --database_filename ../../db.sqlite3 --model_pickle_filename trained_classifier.pkl
+# python train_classifier.py --database_filename ../../db.sqlite3 --model_pickle_filename trained_classifier.pkl --grid_search_cv
 
 import os
 import sys
@@ -165,13 +165,15 @@ def parse_input_arguments():
     Returns:
         database_filename (str): database filename. Default value DATABASE_FILENAME
         model_pickle_filename (str): pickle filename. Default value MODEL_PICKLE_FILENAME
+        grid_search_cv (bool): If True perform grid search of the parameters
     '''
     parser = argparse.ArgumentParser(description = "Disaster Response Pipeline Train Classifier")
     parser.add_argument('--database_filename', type = str, default = DATABASE_FILENAME, help = 'Database filename of the cleaned data')
     parser.add_argument('--model_pickle_filename', type = str, default = MODEL_PICKLE_FILENAME, help = 'Pickle filename to save the model')
+    parser.add_argument('--grid_search_cv', action = "store_true", default = False, help = 'Perform grid search of the parameters')
     args = parser.parse_args()
     #print(args)
-    return args.database_filename, args.model_pickle_filename
+    return args.database_filename, args.model_pickle_filename, args.grid_search_cv
 
 
 def train(database_filename, model_pickle_filename, grid_search_cv = False):
@@ -186,6 +188,7 @@ def train(database_filename, model_pickle_filename, grid_search_cv = False):
     '''
     # print(database_filename)
     # print(model_pickle_filename)
+    # print(grid_search_cv)
     # print(os.getcwd())
 
     print('Download nltk componets if needed...')
@@ -211,5 +214,5 @@ def train(database_filename, model_pickle_filename, grid_search_cv = False):
 
 
 if __name__ == '__main__':
-    database_filename, model_pickle_filename = parse_input_arguments()
-    train(database_filename, model_pickle_filename, grid_search_cv = True)
+    database_filename, model_pickle_filename, grid_search_cv = parse_input_arguments()
+    train(database_filename, model_pickle_filename, grid_search_cv)
