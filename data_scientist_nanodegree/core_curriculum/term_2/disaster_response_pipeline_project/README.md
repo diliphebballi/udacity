@@ -83,6 +83,58 @@ Using sqlite3 command shell is possible to extract a dump of the database if nee
 
 ## Results
 
+The dash application 
+
+![Home](images/home.JPG)
+
+When no message is give in input the application gives an overview of the dataset in the home page
+
+![Overview of Training Dataset](images/overview_training_dataset.JPG)
+
+When a messagge is submitted with the **Classify Message** button the resulting categories are highlighted in green
+
+![Classification Result](images/classification_result.JPG)
+
+As shown in the **Overview of Training Dataset** section the dataset is highly imbalanced and that is the reason why the accuracy is high and the recall value is pretty low. To tackle and imbalanced dataset there are a lot of ways as shown in this really intresting [post](https://medium.com/james-blogs/handling-imbalanced-data-in-classification-problems-7de598c1059f)
+
+|		 	      Category | Precision | Accuracy | Recall | F1-score | Support |
+| --------------------- | --------- | -------- | ------ | -------- | ------- |
+|               related |    0.83   |   0.79   |  0.37  |   0.51   |   1123  |
+|               request |    0.00   |   0.87   |  0.00  |   0.00   |     30  |
+|                 offer |    0.74   |   0.99   |  0.52  |   0.61   |   2711  |
+|           aid_related |    0.53   |   0.72   |  0.06  |   0.11   |    504  |
+|          medical_help |    0.65   |   0.92   |  0.06  |   0.11   |    326  |
+|      medical_products |    0.62   |   0.95   |  0.09  |   0.15   |    171  |
+|     search_and_rescue |    0.33   |   0.97   |  0.01  |   0.02   |    120  |
+|              security |    0.54   |   0.98   |  0.09  |   0.15   |    232  |
+|              military |    0.00   |   0.96   |  0.00  |   0.00   |      0  |
+|           child_alone |    0.83   |   1.00   |  0.19  |   0.31   |    398  |
+|                 water |    0.82   |   0.94   |  0.35  |   0.49   |    700  |
+|                  food |    0.81   |   0.92   |  0.25  |   0.38   |    580  |
+|               shelter |    0.67   |   0.92   |  0.12  |   0.20   |    102  |
+|              clothing |    0.62   |   0.98   |  0.03  |   0.06   |    148  |
+|                 money |    0.50   |   0.97   |  0.04  |   0.08   |     70  |
+|        missing_people |    0.29   |   0.98   |  0.01  |   0.02   |    203  |
+|              refugees |    0.84   |   0.96   |  0.18  |   0.29   |    291  |
+|                 death |    0.40   |   0.96   |  0.02  |   0.04   |    861  |
+|             other_aid |    0.60   |   0.86   |  0.01  |   0.01   |    419  |
+|infrastructure_related |    0.66   |   0.93   |  0.07  |   0.13   |    292  |
+|             transport |    0.76   |   0.95   |  0.10  |   0.18   |    343  |
+|             buildings |    0.44   |   0.95   |  0.06  |   0.10   |    140  |
+|           electricity |    0.00   |   0.97   |  0.00  |   0.00   |     44  |
+|                 tools |    0.00   |   0.99   |  0.00  |   0.00   |     57  |
+|             hospitals |    0.00   |   0.99   |  0.00  |   0.00   |     30  |
+|                 shops |    0.00   |   0.99   |  0.00  |   0.00   |     87  |
+|           aid_centers |    0.40   |   0.98   |  0.01  |   0.01   |    280  |
+|  other_infrastructure |    0.85   |   0.95   |  0.49  |   0.62   |   1838  |
+|       weather_related |    0.92   |   0.83   |  0.32  |   0.47   |    528  |
+|                floods |    0.79   |   0.94   |  0.27  |   0.40   |    595  |
+|                 storm |    0.00   |   0.92   |  0.00  |   0.00   |     69  |
+|                  fire |    0.90   |   0.98   |  0.56  |   0.69   |    638  |
+|            earthquake |    0.84   |   0.95   |  0.12  |   0.22   |    128  |
+|                  cold |    0.60   |   0.98   |  0.05  |   0.08   |    328  |
+|         other_weather |    0.82   |   0.95   |  0.31  |   0.45   |   1293  |
+|           avg / total |    0.72   |          |  0.29  |   0.39   |  15679  |
 
 ## Licensing and Acknowledgements
 
