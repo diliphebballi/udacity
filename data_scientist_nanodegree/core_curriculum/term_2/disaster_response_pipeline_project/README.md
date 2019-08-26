@@ -74,8 +74,11 @@ To run the the preparation [Jupyter Notebook](http://ipython.org/notebook.html) 
 Using sqlite3 command shell is possible to extract a dump of the database if needed:
 
 `sqlite3 db.sqlite3`
+
 `sqlite3> .output db_dump.txt`
+
 `sqlite3> .dump`
+
 `sqlite3> .quit`
 
 ## Results
