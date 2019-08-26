@@ -69,7 +69,7 @@ All the modules provide the help funcionality provided by [argparse](https://doc
 
 By default the è[GridSearchCV](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) for the best parameters for the model is disable because of the long time required to perform it. To perform it run **train_classifier.py** with the option `--grid_search_cv`
 
-To run the the preparation [Jupyter Notebook](http://ipython.org/notebook.html) run the command `jupyter notebook ETL Pipeline Preparation.ipynb` or `jupyter notebook ML Pipeline Preparation.ipynb` in the folder were the file is located.    
+To run the the preparation [Jupyter Notebook](http://ipython.org/notebook.html) run the command `jupyter notebook ETL_Pipeline_Preparation.ipynb` or `jupyter notebook ML_Pipeline_Preparation.ipynb` in the folder were the file is located.    
 
 Using sqlite3 command shell is possible to extract a dump of the database if needed:
 
