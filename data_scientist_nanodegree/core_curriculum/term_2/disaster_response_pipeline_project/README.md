@@ -134,7 +134,7 @@ As shown in the **Overview of Training Dataset** section the dataset is highly i
 |            earthquake |    0.84   |   0.95   |  0.12  |   0.22   |    128  |
 |                  cold |    0.60   |   0.98   |  0.05  |   0.08   |    328  |
 |         other_weather |    0.82   |   0.95   |  0.31  |   0.45   |   1293  |
-|           avg / total |    0.72   |          |  0.29  |   0.39   |  15679  |
+|           avg / total |    0.72   |   0.93   |  0.29  |   0.39   |  15679  |
 
 ## Licensing and Acknowledgements
 
