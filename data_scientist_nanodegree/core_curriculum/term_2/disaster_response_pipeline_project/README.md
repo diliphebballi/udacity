@@ -41,11 +41,13 @@ From the project folder run `python dash_disaster_response_pipeline.py` to start
 |-- disaster_response_pipeline_project
     |-- disaster_response_pipeline
     |   |-- data
+    |   |   |-- ETL Pipeline Preparation.ipynb
     |   |   |-- process_data.py    
     |   |   |-- disaster_categories.csv 
     |   |   |-- disaster_messages.csv     
     |   |
     |   |-- classifier
+    |   |   |-- ML Pipeline Preparation.ipynb
     |   |   |-- train_classifier.py
     |   |   |-- trained_classifier.pkl
     |   |
@@ -54,7 +56,6 @@ From the project folder run `python dash_disaster_response_pipeline.py` to start
     |
     |-- db.sqlite3
     |-- db_dump.txt
-    |-- commands.txt
     |-- README.md
 </pre>
 
@@ -65,7 +66,18 @@ If the application does not find the **trained_classifier.pkl** pickle file to l
 Flowchart made using [draw.io](https://about.draw.io/)
 
 All the modules provide the help funcionality provided by [argparse](https://docs.python.org/3/library/argparse.html) module.
-    
+
+By default the è[GridSearchCV](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) for the best parameters for the model is disable because of the long time required to perform it. To perform it run **train_classifier.py** with the option `--grid_search_cv`
+
+To run the the preparation [Jupyter Notebook](http://ipython.org/notebook.html) run the command `jupyter notebook ETL Pipeline Preparation.ipynb` or `jupyter notebook ML Pipeline Preparation.ipynb` in the folder were the file is located.    
+
+Using sqlite3 command shell is possible to extract a dump of the database if needed:
+
+`sqlite3 db.sqlite3`
+`sqlite3> .output db_dump.txt`
+`sqlite3> .dump`
+`sqlite3> .quit`
+
 ## Results
 
 
