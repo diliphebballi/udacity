@@ -1,7 +1,7 @@
 # [Data Scientist Nanodegree](https://eu.udacity.com/course/data-scientist-nanodegree--nd025)
 
 The Nanodegree is composed by:
-1. Core Curriculum
+1. [Core Curriculum](https://github.com/simonerigoni/udacity/tree/master/data_scientist_nanodegree/core_curriculum)
     1. Term 1
         1. Welcome to the Nanodegree
         2. Supervised Learning
@@ -16,7 +16,7 @@ The Nanodegree is composed by:
         5. Experimental Design & Recommendations
         6. Data Scientist Capstone
         7. Congratulations
-2. Extracurricular
+2. [Extracurricular](https://github.com/simonerigoni/udacity/tree/master/data_scientist_nanodegree/extracurricular)
     1. Prerequisite: Python for Data Analysis
     2. Prerequisite: SQL
     3. Prerequisite: Data Visualization
