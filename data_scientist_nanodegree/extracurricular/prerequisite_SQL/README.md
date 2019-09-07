@@ -1,4 +1,4 @@
-# Capstone Content: Spark
+# Prerequisite: SQL
 
   1. Basic SQL
   2. SQL Joins
