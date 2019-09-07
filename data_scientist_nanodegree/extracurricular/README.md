@@ -6,5 +6,5 @@
   4. Prerequisite: Git & Github
   5. Prerequisite: Linear Algebra
   6. Prerequisite: Practical Statistics
-  7. Convolutional Neural Networks
-  8. Spark
+  7. Capstone Content: Convolutional Neural Networks
+  8. Capstone Content: Spark
