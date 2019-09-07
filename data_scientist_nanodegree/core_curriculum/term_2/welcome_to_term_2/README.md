@@ -1,4 +1,6 @@
-Welcome to the Data Scientist Nanodegree Program
-Welcome to Udacity
-Get Help with Your Account
-The Skills That Set You Apart
+# Welcome to Term 2
+
+  1. Welcome to the Data Scientist Nanodegree Program
+  2. Welcome to Udacity
+  3. Get Help with Your Account
+  4. The Skills That Set You Apart
