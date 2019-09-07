@@ -1,0 +1,58 @@
+Statement_Type,Column_Code,Name,Description,Units
+Income Statement,tot_revnu,Total revenue,The sum of all revenue fields included for a company's operating activities.,Millions
+Income Statement,cost_good_sold,Cost of goods sold,The difference between beginning and ending inventories for tangible products resulting in an expense that reflects production and sales costs.,Millions
+Income Statement,gross_profit,Gross profit,Revenues from operations less the associated costs.,Millions
+Income Statement,tot_oper_exp,Total operating expenses,The sum of all operating expenses for the given industry.,Millions
+Income Statement,oper_income,Operating income,The income after operating expenses,Millions
+Income Statement,tot_non_oper_income_exp,Total non-operating income/expense,The sum of all non-operating expenses for the given industry.,Millions
+Income Statement,pre_tax_income,Pre-tax income,Company's earnings or loss before taxes on income have been accounted for.,Millions
+Income Statement,income_aft_tax,Income after taxes,"Earnings or losses after income tax expense but before minority interest, extraordinary items, discontinued operations, preferred dividends and accounting changes have been accounted for.",Millions
+Income Statement,income_cont_oper,Income from continuous operations,"A company's total income or loss before discontinued operations, extraordinary items, preferred stock dividends and accounting change",Millions
+Income Statement,consol_net_income_loss,Consolidated net income/loss,A company's total income or loss before preferred stock dividends,Millions
+Income Statement,net_income_loss_share_holder,Net income/loss available to common share holders,"Company's net profit or loss after all revenues, income items, and expenses have been accounted for. Because this figure is given after preferred dividend expense, it the net income value allotted to common shareholders.",Millions
+Income Statement,eps_basic_cont_oper,Earnings per share (EPS) (basic) from continuous operations,Company's net earnings or losses from continuing operations on a per basic share basis.,Actual $
+Income Statement,eps_basic_consol,Earnings per share (EPS) (basic) consolidated,"Company's net earnings or losses including non-controlling interest, before preferred dividends, on a per basic share basis.",Actual $
+Income Statement,basic_net_eps,Basic net earnings per share (EPS),Company's net earnings or losses attributable to common shareholders per basic share basis.,
+Income Statement,eps_diluted_cont_oper,Earnings per share (EPS) (diluted) from continuous operations,Company's net earnings or losses from continuing operations on a per diluted share basis.,Actual $
+Income Statement,eps_diluted_consol,Earnings per share (EPS) (diluted) consolidated,"Company's net earnings or losses including non-controlling interest, before preferred dividends, on a per diluted share basis.",Actual $
+Income Statement,diluted_net_eps,Diluted net earnings per share (EPS),"Company's net earnings or losses attributable to common shareholders per diluted share basis which includes all convertible securities and debt, options and warrants.",
+Income Statement,dilution_factor,Dilution factor,"The per share value of all items such as convertible debt, securities, warrants and options that are assumed converted to calculate diluted shares.",Millions
+Income Statement,avg_d_shares,Weighted-average diluted shares outstanding,"The number of shares held by shareholders including insiders but not including a company's treasury shares, sourced from the company earnings press releases.",
+Income Statement,avg_b_shares,Weighted-average basic shares outstanding,"The number of shares held by shareholders including insiders but not including a company's treasury shares assuming conversion of all convertible debt, securities, warrants and options, sourced from the company earnings press releases.",
+Income Statement,norm_pre_tax_income,Normalized pre-tax income,A company's income before income tax expense smoothed out by removing non-recurring items.,Millions
+Income Statement,norm_aft_tax_income,Normalized income after tax,A company's after tax profit or loss smoothed out by elimination of all non-recurring items.,Millions
+Income Statement,ebitda,"Earnings before interest, taxes, depreciation, and amortization (EBITDA)","Income before interest, taxes, depreciation and amortization.",Millions
+Income Statement,ebit,Earnings before interest and taxes (EBIT),Income before interest and taxes,Millions
+Income Statement,wavg_shares_out,Weighted-average shares outstanding (basic),"The number of shares held by shareholders including insiders but not including a company's treasury shares, sourced from the company 10-K or 10-Q SEC reports.",Millions
+Income Statement,wavg_shares_out_diluted,Weighted-average shares outstanding (diluted),"The number of shares held by shareholders including insiders but not including a company's treasury shares assuming conversion of all convertible debt, securities, warrants and options, sourced from the company 10-K or 10-Q SEC reports.",Millions
+Income Statement,eps_basic_net,Earnings per share (EPS) (basic) net,A company's net earnings or losses attributable to common shareholders per basic share basis.,Actual $
+Income Statement,eps_diluted_net,Earnings per share (EPS) (diluted) net,"A company's net earnings or losses attributable to common shareholders per diluted share baswhich includes all convertible securities and debt, options and warrants.",Actual $
+Balance Sheet,tot_curr_asset,Total current assets,The sum of all assets that are classified as current because they will provide a benefit within one year.,Millions
+Balance Sheet,net_prop_plant_equip,"Net - Property, plant, and equipment","The sum of all net property, plant & Equipment fields. Where companies do not report a break down of plant, property, & equipment, the value is entered in this field alone.",Millions
+Balance Sheet,tot_lterm_asset,Total long-term assets,The sum of all assets classified as non-current,Millions
+Balance Sheet,tot_asset,Total assets,The sum of all assets on a company's balance sheet.,Millions
+Balance Sheet,tot_curr_liab,Total current liabilities,The sum of all liabilities classified as current for having maturities of less than one year.,Millions
+Balance Sheet,tot_lterm_debt,Total long-term debt,The sum of all long term debt fields,Millions
+Balance Sheet,tot_lterm_liab,Total long-term liabilities,The sum of all non-current liabilities,Millions
+Balance Sheet,tot_liab,Total liabilities,The total value of all possible claims against the corporation.,Millions
+Balance Sheet,tot_comm_equity,Total common equity,The sum of all common equity items,Millions
+Balance Sheet,tot_share_holder_equity,Total share holder equity,The sum of preferred and common equity items,Millions
+Balance Sheet,tot_liab_share_holder_equity,Total liabilities and share holders equity,The total of all liabilities and shareholders' equity.,Millions
+Balance Sheet,comm_shares_out,Common shares outstanding,The number of class A shares currently held by investors.,Millions
+Balance Sheet,tang_stock_holder_equity,Tangible stock holders equity,The value shareholders equity less intangible assets,Millions
+Cash Flow Statement,cash_flow_oper_activity,Cash flow from operating activities,A company's cash flows from operations.,Millions
+Cash Flow Statement,cash_flow_invst_activity,Cash flow from investing activities,The total change in cash resulting from a companies investments,Millions
+Cash Flow Statement,cash_flow_fin_activity,Cash flow from financial activities,The net amount of cash transactions used in funding activities,Millions
+Cash Flow Statement,incr_decr_cash,Increase/decrease in cash,The total change in cash for the company over the given period.,Millions
+Cash Flow Statement,beg_cash,Beginning cash,The amount of cash reported by the company on its previous statement.,Millions
+Cash Flow Statement,end_cash,End cash,The amount of cash held by the company for the given period.,Millions
+Cash Flow Statement,stock_based_compsn,Stock-based compensation,"The estimated market value of stock options, warrants and other stock-based compensation given to employees and/or vendors",Millions
+Cash Flow Statement,comm_stock_div_paid,Common stock dividends paid,The cash outflow for dividends paid on a company's common stock,Millions
+Cash Flow Statement,pref_stock_div_paid,Preferred stock dividends paid,The cash outflow for dividends paid on a company's preferred stock,Millions
+Supplementary Cash Flow,tot_deprec_amort_qd,Total depreciation and amortization -Quarterly discrete,Quarterly discrete version of total depreciation and amortization from the cash flow statement,Millions
+Supplementary Cash Flow,stock_based_compsn_qd,Stock-based compensation - Quarterly discrete,Quarterly discrete version of stock-based compensation from the cash flow statement,Millions
+Supplementary Cash Flow,cash_flow_oper_activity_qd,Cash flow from operating activities - Quarterly discrete,Quarterly discrete version of total cash flow from operations,Millions
+Supplementary Cash Flow,net_change_prop_plant_equip_qd,"Net change in property, plant, and equipment - Quarterly discrete","Quarterly discrete version of the net change in property, plant & equipment from the cash flow statement",Millions
+Supplementary Cash Flow,comm_stock_div_paid_qd,Common stock dividends paid - Quarterly discrete,Quarterly discrete version of total common stock dividends paid from the cash flow statement,Millions
+Supplementary Cash Flow,pref_stock_div_paid_qd,Preferred stock dividends paid - Quarterly discrete,Quarterly discrete version of total preferred stock dividends paid from the cash flow statement,Millions
+Supplementary Cash Flow,tot_comm_pref_stock_div_qd,Total common and preferred stock dividends paid - Quarterly discrete,Quarterly discrete version of total common and preferred stock dividends paid from the cash flow statement,Millions
