@@ -12,9 +12,10 @@ This project is part of The [Udacity](https://eu.udacity.com/) Data Scientist Na
     * Disaster Response Pipelines
     * Recommendation Engines
 
-The goal of this project is to put in practice the skills teached during all the nanodegree plus the extracurricular course dedicated to [Spark](https://spark.apache.org/). Apache Spark is a unified analytics engine for big data processing, with built-in modules for streaming, SQL, machine learning and graph processing.
-The general context is about the necessity to predict if a user is going to churn from the fictional digital music service called Sparkify. Users can listen to music for free by also listening to some advertisement in between the songs or by paying a monthly subscription fee to have an ads free experience.
-For this project has been provided a tiny subset (128MB) for approaching the problem and a full dataset (12GB) thus the necessity to use Spark for this project.
+The goal of this project is to put in practice the skills taught during all the nanodegree plus the extracurricular course dedicated to [Spark](https://spark.apache.org/). Apache Spark is a unified analytics engine for big data processing, with built-in modules for streaming, SQL, machine learning and graph processing.
+The specific aim is to predict if a user is going to churn from the fictional digital music service called Sparkify. Users can listen to music for free by also listening to some advertisement in between the songs or by paying a monthly subscription fee to have an ads free experience. In any time the users can decide to downgrade from premium to free, upgrade from free to premium or to cancel from the service.
+
+![Home](images/sparkify.JPG)
 
 ## Software and Libraries
 This project uses Python 3.7.2 and the following libraries:
@@ -25,7 +26,7 @@ This project uses Python 3.7.2 and the following libraries:
 * [seaborn](https://seaborn.pydata.org/)
 
 ## Data
-The dataset provided, as already said is pretty big (12GB) and is basically composed by the log of each user action on the platform:
+The dataset provided is pretty big (12GB) and is basically composed by the log of each user action on the platform. A smaller subset (128MB) is also provided for approaching the problem:
 * **mini_sparkify_event_data.json**: Subset
 * **sparkify_event_data.json**: Full dataset
 
