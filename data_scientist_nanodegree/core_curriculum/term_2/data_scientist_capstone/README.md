@@ -1,4 +1,4 @@
-# Data Scientist Capstone Project
+# Data Scientist Nanodegree Capstone Project
 
 ## Introduction
 
