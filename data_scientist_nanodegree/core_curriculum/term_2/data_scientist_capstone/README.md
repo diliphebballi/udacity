@@ -49,6 +49,7 @@ I have compared the results of three models:
 ![Results](images/results.JPG)
 
 Becasue the dataset is pretty imbalanced to evaluate the resutls I have used **F-1 Score**. As explained wonderfully in this [post](http://www.davidsbatista.net/blog/2018/08/19/NLP_Metrics/) **Accurcay** is not indicated for imbalanced dataset.
+
 **Logist Regression** has the best **F-1 Score**
 
 ## Licensing and Acknowledgements
