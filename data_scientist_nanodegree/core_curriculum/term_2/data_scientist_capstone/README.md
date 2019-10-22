@@ -39,7 +39,17 @@ If you donwload it simply run the command `jupyter notebook sparkify.ipynb` in t
 
 ## Results
 
-Results are better explained in this [blog post](https://medium.com/@simone.rigoni01)
+Results are better explained in this [blog post](https://medium.com/@simone.rigoni01/user-churn-prediction-using-spark-22ff8dafb5c) but just to summarize:
+
+I have compared the results of three models:
+- **Logistic Regression**
+- **Gradient Boosted Trees**
+- **Support Vector Machine**
+
+![Results](images/results.JPG)
+
+Becasue the dataset is pretty imbalanced to evaluate the resutls I have used **F-1 Score**. As explained wonderfully in this [post](http://www.davidsbatista.net/blog/2018/08/19/NLP_Metrics/) **Accurcay** is not indicated for imbalanced dataset.
+**Logist Regression** has the best **F-1 Score**
 
 ## Licensing and Acknowledgements
 
