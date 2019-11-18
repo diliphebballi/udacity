@@ -51,6 +51,7 @@ The modified census dataset consists of approximately 32,000 data points, with e
 
 The code is provided in the [Jupyter Notebook](http://ipython.org/notebook.html) _finding_donors.ipynb_
 If you donwload it simply run the command `jupyter notebook finding_donors.ipynb` in the folder were the file is located.
+To convert in HTML format the notebook run `jupyter nbconvert finding_donors.ipynb`.
 
 ## Licensing and Acknowledgements
 
