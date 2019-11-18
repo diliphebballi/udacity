@@ -1,43 +1,35 @@
+# Finding Donors for CharityML Project
 
-# Supervised Learning
-## Project: Finding Donors for CharityML
+## Introduction
 
-### Install
+This project is part of The [Udacity](https://eu.udacity.com/) Data Scientist Nanodegree Program which is composed by:
+* Term 1
+    * Supervised Learning
+    * Deep Learning
+    * Unsupervised Learning
+* Term 2
+    * Write A Data Science Blog Post
+    * Disaster Response Pipelines
+    * Recommendation Engines
+    
+The goal of this project is to apply Supervised learning techniques on data collected for the U.S. census to help CharityML (a fictitious charity organization) to identify people most likely to donate to their cause. From Udacity a template code was provided in the `finding_donors.ipynb` notebook and the `visuals.py` module which is some out-of-the-box code needed for visualizations. 
 
-This project requires **Python 3.x** and the following Python libraries installed:
+## Software and Libraries
+
+This project uses Python 3.7.2 and the following libraries:
 
 - [NumPy](http://www.numpy.org/)
 - [Pandas](http://pandas.pydata.org)
 - [matplotlib](http://matplotlib.org/)
 - [scikit-learn](http://scikit-learn.org/stable/)
 
-You will also need to have software installed to run and execute an [iPython Notebook](http://ipython.org/notebook.html)
-
-We recommend students install [Anaconda](https://www.continuum.io/downloads), a pre-packaged Python distribution that contains all of the necessary libraries and software for this project. 
-
-### Code
-
-Template code is provided in the `finding_donors.ipynb` notebook file. You will also be required to use the included `visuals.py` Python file and the `census.csv` dataset file to complete your work. While some code has already been implemented to get you started, you will need to implement additional functionality when requested to successfully complete the project. Note that the code included in `visuals.py` is meant to be used out-of-the-box and not intended for students to manipulate. If you are interested in how the visualizations are created in the notebook, please feel free to explore this Python file.
-
-### Run
-
-In a terminal or command window, navigate to the top-level project directory `finding_donors/` (that contains this README) and run one of the following commands:
-
-```bash
-ipython notebook finding_donors.ipynb
-```  
-or
-```bash
-jupyter notebook finding_donors.ipynb
-```
-
-This will open the iPython Notebook software and project file in your browser.
-
-### Data
+## Data
 
 The modified census dataset consists of approximately 32,000 data points, with each datapoint having 13 features. This dataset is a modified version of the dataset published in the paper *"Scaling Up the Accuracy of Naive-Bayes Classifiers: a Decision-Tree Hybrid",* by Ron Kohavi. You may find this paper [online](https://www.aaai.org/Papers/KDD/1996/KDD96-033.pdf), with the original dataset hosted on [UCI](https://archive.ics.uci.edu/ml/datasets/Census+Income).
 
-**Features**
+* **census.csv**: census dataset
+
+### Features
 - `age`: Age
 - `workclass`: Working Class (Private, Self-emp-not-inc, Self-emp-inc, Federal-gov, Local-gov, State-gov, Without-pay, Never-worked)
 - `education_level`: Level of Education (Bachelors, Some-college, 11th, HS-grad, Prof-school, Assoc-acdm, Assoc-voc, 9th, 7th-8th, 12th, Masters, 1st-4th, 10th, Doctorate, 5th-6th, Preschool)
@@ -52,5 +44,14 @@ The modified census dataset consists of approximately 32,000 data points, with e
 - `hours-per-week`: Average Hours Per Week Worked
 - `native-country`: Native Country (United-States, Cambodia, England, Puerto-Rico, Canada, Germany, Outlying-US(Guam-USVI-etc), India, Japan, Greece, South, China, Cuba, Iran, Honduras, Philippines, Italy, Poland, Jamaica, Vietnam, Mexico, Portugal, Ireland, France, Dominican-Republic, Laos, Ecuador, Taiwan, Haiti, Columbia, Hungary, Guatemala, Nicaragua, Scotland, Thailand, Yugoslavia, El-Salvador, Trinadad&Tobago, Peru, Hong, Holand-Netherlands)
 
-**Target Variable**
+### Target Variable
 - `income`: Income Class (<=50K, >50K)
+
+## Running the code
+
+The code is provided in the [Jupyter Notebook](http://ipython.org/notebook.html) _finding_donors.ipynb_
+If you donwload it simply run the command `jupyter notebook finding_donors.ipynb` in the folder were the file is located.
+
+## Licensing and Acknowledgements
+
+Thanks Udacity [Udacity](https://eu.udacity.com/) for the dataset
