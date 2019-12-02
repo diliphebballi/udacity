@@ -7,3 +7,4 @@
 /.vs
 /data_scientist_nanodegree/extracurricular/capstone_content_spark/machine_learning_with_spark/Train_onetag_small.json
 /data_scientist_nanodegree/core_curriculum/term_2/data_scientist_capstone/mini_sparkify_event_data.json
+/data_scientist_nanodegree/core_curriculum/term_1/deep_learning/image_classifier_project/part_2/checkpoints/checkpoint.pth
