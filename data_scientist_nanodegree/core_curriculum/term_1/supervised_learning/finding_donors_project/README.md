@@ -53,6 +53,25 @@ The code is provided in the [Jupyter Notebook](http://ipython.org/notebook.html)
 If you donwload it simply run the command `jupyter notebook finding_donors.ipynb` in the folder were the file is located.
 To convert in HTML format the notebook run `jupyter nbconvert finding_donors.ipynb`.
 
+## Results
+
+Results are better explained in this [blog post](https://medium.com/@simone.rigoni01/) but just to summarize:
+
+I have compared the results of three models:
+- **Decision Trees**
+- **Support Vector Machines**
+- **AdaBoost**
+
+![Results](images/results.JPG)
+
+Becasue the dataset is pretty imbalanced to evaluate the resutls I have used **F-1 Score**. As explained wonderfully in this [post](http://www.davidsbatista.net/blog/2018/08/19/NLP_Metrics/) **Accurcay** is not indicated for imbalanced dataset.
+
+**AdaBoost** has the best **F-1 Score** and using **GridSearchCV** I have tuned the model improving furthermore the performances
+
+Finally I have extracted the feature importance:
+
+![Results](images/feature_importance.JPG)
+
 ## Licensing and Acknowledgements
 
 Thanks Udacity [Udacity](https://eu.udacity.com/) for the dataset
