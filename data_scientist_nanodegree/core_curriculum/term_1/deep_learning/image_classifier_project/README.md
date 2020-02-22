@@ -21,7 +21,8 @@ This project uses Python 3.7.2 and the following libraries:
 * [scikit-learn](http://scikit-learn.org/stable/)
 * [Matplotlib](http://matplotlib.org/)
 * [seaborn](https://seaborn.pydata.org/)
-...
+* [PyTorch](https://pytorch.org/)
+* [Pillow](https://pillow.readthedocs.io/en/stable/)
 
 ## Data
 The dataset is provided by [Udacity](http://www.robots.ox.ac.uk/~vgg/data/flowers/102/index.html) and is composed by:
@@ -32,7 +33,7 @@ The dataset is provided by [Udacity](http://www.robots.ox.ac.uk/~vgg/data/flower
 
 This set contains images of flowers belonging to 102 different categories. The images were acquired by searching the web and taking pictures. The images have large scale, pose and light variations. In addition, there are categories that have large variations within the category and several very similar categories
 
-More information in [Automated Flower Classification over a Large Number of Classes by M. Nilsback, A. Zisserman] (http://www.robots.ox.ac.uk/~vgg/publications/2008/Nilsback08)
+More information in [this paper](http://www.robots.ox.ac.uk/~vgg/publications/2008/Nilsback08) by M. Nilsback, A. Zisserman
 
 ## Running the code
 
