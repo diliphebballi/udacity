@@ -32,7 +32,7 @@ The dataset is provided by [Udacity](http://www.robots.ox.ac.uk/~vgg/data/flower
 
 This set contains images of flowers belonging to 102 different categories. The images were acquired by searching the web and taking pictures. The images have large scale, pose and light variations. In addition, there are categories that have large variations within the category and several very similar categories
 
-More information in [Automated Flower Classification over a Large Number of Classes by M. Nilsback, A. Zisserman] http://www.robots.ox.ac.uk/~vgg/publications/2008/Nilsback08/
+More information in [Automated Flower Classification over a Large Number of Classes by M. Nilsback, A. Zisserman] (http://www.robots.ox.ac.uk/~vgg/publications/2008/Nilsback08/)
 
 ## Running the code
 
