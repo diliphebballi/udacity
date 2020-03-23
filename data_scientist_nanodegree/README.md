@@ -25,3 +25,5 @@ The Nanodegree is composed by:
     6. Prerequisite: Practical Statistics
     7. Capstone Content: Convolutional Neural Networks
     8. Capstone Content: Spark
+    
+The repository from the course can be found [here](https://github.com/udacity/DSND_Term1)
