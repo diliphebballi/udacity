@@ -36,7 +36,9 @@ More info in `requirements.txt`
 ## Running the code
 
 From the project folder run `python finance_data_dashboard.py` to start the dash application. The default url to connect to it is http://127.0.0.1:8050/
+
 The applicaation can be run stand alone or within a django web site using **django_plotly_dash**
+
 To work you have to provide your own **QUANDL_PERSONAL_KEY**
 
 ## Results
