@@ -22,10 +22,10 @@ The goal of this project is to develop and deploy a data dashboard to put in pra
 This project uses Python 3.8.2 and the following libraries:
 * [NumPy](http://www.numpy.org/)
 * [dash](https://plot.ly/dash/)
-- [django](https://www.djangoproject.com/)
-- [django-plotly-dash](https://pypi.org/project/django-plotly-dash/)
+* [django](https://www.djangoproject.com/)
+* [django-plotly-dash](https://pypi.org/project/django-plotly-dash/)
 * [Pandas](http://pandas.pydata.org)
-- [Quandl](https://pypi.org/project/Quandl/)
+* [Quandl](https://pypi.org/project/Quandl/)
 
 More info in `requirements.txt`
 
