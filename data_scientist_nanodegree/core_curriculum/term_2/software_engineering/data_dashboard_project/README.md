@@ -52,5 +52,5 @@ In the top part is possible to select wich stocks you want to compare, the time 
 In the bottom part we can see the graphs of the stocks we have selected and we can choose to see different indicators with a dropbox menu
 
 ## Licensing and Acknowledgements
-Thanks to Quandl for the datasets and more information about the licensing of the data can be find [here](https://www.quandl.com/databases/WIKIP/documentation)
+Thanks to [Quandl](https://www.quandl.com/) for the datasets and more information about the licensing of the data can be find [here](https://www.quandl.com/databases/WIKIP/documentation)
 
