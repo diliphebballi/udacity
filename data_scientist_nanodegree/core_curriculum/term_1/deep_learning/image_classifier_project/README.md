@@ -37,14 +37,57 @@ More information in [this paper](http://www.robots.ox.ac.uk/~vgg/publications/20
 
 ## Running the code
 
-The code is provided in a [Jupyter Notebook](http://ipython.org/notebook.html) then converted in a command line application:
-* _part_1/image_classifier_project.ipynb_: Load data, Building and training the classifier an testing
-* _part_2/train.py_: train a new network on a dataset and save the model as a checkpoint
-* _part_2/predict.py_: uses a trained network to predict the class for an input image
+The code is provided in a [Jupyter Notebook](http://ipython.org/notebook.html) then converted in a dash application
 
-If you donwload it simply run the command `jupyter notebook image_classifier_project.ipynb` in the folder were the file is located.
+<pre>
+|-- image_classifier_project
+    |-- classifier
+    |   |-- train.py
+    |   |-- checkpoint.pth
+    |
+    |-- data
+    |   |-- cat_to_name.json
+    |   |-- flowers
+    |       |-- test
+    |       |-- train
+    |       |-- valid
+    |
+    |-- images
+    |-- media
+    |-- image_classifier_project.ipynb
+    |-- check_pytorch.py
+    |-- dash_image_classifier_project.py
+    |-- image_classifier_project.py
+    |-- predict.py
+    |-- README.md
+</pre>
+
+If you donwload Jupyter Notebook simply run the command `jupyter notebook image_classifier_project.ipynb` in the folder were the file is located to check out load data, Building and training the classifier an testing.
+From the project folder run `python dash_image_classifier_project.py` to start the dash application. The default url to connect to it is http://127.0.0.1:8050/
+
+If the application does not find the **checkpoint.pth** checkpoint file to load the model it will train the model (save it in **classifier/checkpoint.pth**) to get the application ready to classify images in real time
+
+![Flowchart](images/flowchart.png)
+
+Flowchart made using [draw.io](https://about.draw.io/)
+
+All the modules provide the help funcionality provided by [argparse](https://docs.python.org/3/library/argparse.html) module.
 
 ## Results
+
+The dash application 
+
+![Home](images/home.JPG)
+
+Results are better explained in this [blog post](https://medium.com/@simone.rigoni01/)
+
+When no image is give in input the application gives an overview of the dataset in the home page
+
+![Overview of Training Dataset](images/overview_training_dataset.JPG)
+
+When an image is submitted with the **Classify Message** button the resulting categories are shown
+
+![Classification Result](images/classification_result.JPG)
 
 Results are better explained in this [blog post](https://medium.com/@simone.rigoni01/)
 
