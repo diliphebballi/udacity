@@ -79,8 +79,6 @@ The dash application
 
 ![Home](images/home.JPG)
 
-Results are better explained in this [blog post](https://medium.com/@simone.rigoni01/)
-
 When no image is give in input the application gives an overview of the dataset in the home page
 
 ![Overview of Training Dataset](images/overview_training_dataset.JPG)
