@@ -46,11 +46,11 @@ def parse_input_arguments():
         None
 
     Returns:
-        image_path (str):
-        checkpoint_path (str):
-        top_k (str):
-        category_names (float):
-        gpu (int):   
+        image_path (str): image path to classify. Default value DEFAULT_TEST_IMAGE
+        checkpoint_path (str): checkpoint path to load the model. Default value DEFAULT_CHECKPOINT_FILENAME
+        top_k (int): number of top clases to use. Default value DEFAULT_TOP_K
+        category_names (str): Mapping file category label to name. Default value FILEPATH_JSON_CATEGORY
+        gpu (boolean): Enable the use of GPU. Default value DEFAULT_GPU
     '''
     parser = argparse.ArgumentParser(description = "Predict using a deep neural network")
     parser.add_argument('--image_path', type = str, default = DEFAULT_TEST_IMAGE, help = 'Dataset path')
@@ -68,6 +68,12 @@ def parse_input_arguments():
 def load_model_checkpoint(file_path):
     '''
     Load the model checkpoint
+
+    Arguments:
+        file_path (str): checkpoint file path
+
+    Returns:
+        model (object): model loaded from checkpoint
     '''
     checkpoint = torch.load(file_path)
     learning_rate = checkpoint['learning_rate']
@@ -84,11 +90,16 @@ def load_model_checkpoint(file_path):
 def process_image(pil_image):
     '''
     Scales, crops, and normalizes a PIL image for a PyTorch model
-        returns an Numpy array
+
+    Arguments:
+        pil_image (PIL.Image): PIL image 
+
+    Returns:
+        np_image (numpy.array): image in numpy array
     '''
     img_loader = transforms.Compose([transforms.Resize(SIZE_RESIZE),
-                                     transforms.CenterCrop(SIZE_CROP), 
-                                     transforms.ToTensor()])
+                                    transforms.CenterCrop(SIZE_CROP), 
+                                    transforms.ToTensor()])
     
     #pil_image = Image.open(image)
     pil_image = img_loader(pil_image).float()
@@ -103,11 +114,19 @@ def process_image(pil_image):
     return np_image
 
 
-def get_prediction(image_path, model, top_k_probabilities = 5):
+def get_prediction(image_path, model, top_k_probabilities = DEFAULT_TOP_K):
     '''
     Predict the class (or classes) of an image using a trained deep learning model
-    '''
+
+    Arguments:
+        image_path (str): path of the image to classify
+        model (object): model to make predictions
+        top_k_probabilities (int): number of top clases to use
     
+    Returns:
+        top_probabilities (list): top k probabilities
+        top_mapped_classes (list): top k label classes
+    '''
     # Use GPU if it's available
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     #print(device)
@@ -145,13 +164,13 @@ def get_prediction(image_path, model, top_k_probabilities = 5):
 
 def get_mapping_label_name_categories(category_names):
     '''
-    Load .json mapping file from category label to category name
+    Load json mapping file from category label to category name
 
     Arguments:
-        data_directory (str):
+        category_names (str): Mapping file category label to name
 
     Returns:
-       category_label_to_name
+       category_label_to_name (dict): dictionary for mapping category label to name
     '''
     print('\t' + category_names)
     with open(category_names, 'r') as f:
@@ -162,6 +181,15 @@ def get_mapping_label_name_categories(category_names):
 
 def load_model(category_names, checkpoint_path):
     '''
+    Load model from checkpoint file
+
+    Arguments:
+        category_names (str): Mapping file category label to name
+        checkpoint_path (str): checkpoint path to load the model
+
+    Returns:
+        model (object): model to make predictions
+        category_label_to_name (dict): dictionary for mapping category label to name
     '''
     print('Load the model checkpoint from {}'.format(checkpoint_path))
     model = load_model_checkpoint(checkpoint_path)
@@ -178,11 +206,11 @@ def predict(image_path, checkpoint_path, top_k, category_names, gpu):
     Load the model and redict the class (or classes) of an image
 
     Arguments:
-        image_path
-        checkpoint_path
-        top_k
-        category_names
-        gpu
+        image_path (str): image path to classify
+        checkpoint_path (str): checkpoint path to load the model
+        top_k (int): number of top clases to use
+        category_names (str): Mapping file category label to name
+        gpu (boolean): Enable the use of GPU
 
     Returns:
        None

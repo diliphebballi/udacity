@@ -53,14 +53,13 @@ def parse_input_arguments():
         None
 
     Returns:
-        data_directory (str):
-        save_directory (str):
-        network (str):
-        learning_rate (float):
-        hidden_units (int):
-        epochs (int):
-        gpu (str):
-    
+        data_directory (str): directory were data is stored. Default value DEFAULT_DATA_DIRECTORY
+        save_directory (str): directory to save checkpoint. Default value DEFAULT_MODEL_DIRECTORY
+        network (str): network architecture to use. Default value DEFAULT_NETWORK
+        learning_rate (float): learning rate to use. Default value DEFAULT_LEARNING_RATE
+        hidden_units (int): hidden units to use. Default value DEFAULT_HIDDEN_UNITS
+        epochs (int): epochs to use. Default value DEFAULT_EPOCHS
+        gpu (boolean): Enable the use of GPU. Default value DEFAULT_GPU
     '''
     parser = argparse.ArgumentParser(description = "Train a deep neural network")
     parser.add_argument('--data_directory', type = str, default = DEFAULT_DATA_DIRECTORY, help = 'Dataset path')
@@ -81,12 +80,12 @@ def get_data_directories(data_directory):
     Get the directories were train, validation and test data are stored
 
     Arguments:
-        data_directory (str):
+        data_directory (str): base data directory
 
     Returns:
-        train_directory (str):
-        valid_directory (str):
-        test_directory (str):
+        train_directory (str): directory for training dataset
+        valid_directory (str): directory for validation dataset
+        test_directory (str): directory for test dataset
     ''' 
     train_directory = data_directory + '/' + DEFAULT_TRAIN_DIRECTORY
     valid_directory = data_directory + '/' + DEFAULT_VALID_DIRECTORY
@@ -104,12 +103,12 @@ def get_number_of_classes(train_directory, valid_directory, test_directory):
     Get the number of classes from the directory
 
     Arguments:
-        train_directory (str):
-        valid_directory (str):
-        test_directory (str):
+        train_directory (str): directory for training dataset
+        valid_directory (str): directory for validation dataset
+        test_directory (str): directory for test dataset
 
     Returns:
-       number_train_classes (int):
+       number_train_classes (int): number of classes
     ''' 
     number_train_classes = len(os.listdir(train_directory))
     number_valid_classes = len(os.listdir(valid_directory))
@@ -131,14 +130,14 @@ def load_datasets(train_directory, valid_directory, test_directory):
     Load datasets
 
     Arguments:
-        train_directory (str):
-        valid_directory (str):
-        test_directory (str):
+        train_directory (str): directory for training dataset
+        valid_directory (str): directory for validation dataset
+        test_directory (str): directory for test dataset
 
     Returns:
-       train_data
-       valid_data
-       test_data
+       train_data (torchvision.datasets.ImageFolder): train dataset
+       valid_data (torchvision.datasets.ImageFolder): validation dataset
+       test_data (torchvision.datasets.ImageFolder): test dataset
     '''
     train_transforms = transforms.Compose([transforms.RandomRotation(DEGREES_ROTATION),
                                         transforms.RandomResizedCrop(SIZE_CROP),
@@ -172,14 +171,14 @@ def get_data_loaders(train_data, valid_data, test_data):
     Get data loaders
 
     Arguments:
-        train_data
-        valid_data
-        test_data
+       train_data (torchvision.datasets.ImageFolder): train dataset
+       valid_data (torchvision.datasets.ImageFolder): validation dataset
+       test_data (torchvision.datasets.ImageFolder): test dataset
 
     Returns:
-       train_loader
-       valid_loader
-       test_loader
+       train_loader (torch.utils.data.DataLoader): train data loader
+       valid_loader (torch.utils.data.DataLoader): validation data loader
+       test_loader (torch.utils.data.DataLoader): test data loader
     '''
 
     # Using the image datasets and the trainforms, define the dataloaders
@@ -192,13 +191,13 @@ def get_data_loaders(train_data, valid_data, test_data):
 
 def get_mapping_label_name_categories(data_directory):
     '''
-    Load .json mapping file from category label to category name
+    Load json mapping file from category label to category name
 
     Arguments:
-        data_directory (str):
+        category_names (str): Mapping file category label to name
 
     Returns:
-       category_label_to_name
+       category_label_to_name (dict): dictionary for mapping category label to name
     '''
     mapping_file = data_directory + '/' + FILENAME_JSON_CATEGORY
     print('\t' + mapping_file)
@@ -210,14 +209,15 @@ def get_mapping_label_name_categories(data_directory):
 
 def get_pretrained_model(network, number_classes, hidden_units):
     '''
-    Get pretrained model
+    Get pretrained model and adapt it to current needs
 
     Arguments:
-        network
-        number_classes
+        network (str): network architecture to use
+        number_classes (int): number of classes
 
     Returns:
-       model
+       model (object): model adapted to current needs
+       classifier (object): classifier adapted to current needs
     '''
     model = getattr(torchvision.models, network)(pretrained = True)
     out_features = hidden_units
@@ -244,8 +244,8 @@ def save_model_checkpoint(model, train_data, network, number_classes, learning_r
     Save model checkpoint
 
     Arguments:
-        network
-        number_classes
+        network (str): network architecture used
+        number_classes (int): number of classes
 
     Returns:
        None
@@ -267,16 +267,16 @@ def save_model_checkpoint(model, train_data, network, number_classes, learning_r
 
 def train(data_directory, save_directory, network, learning_rate, hidden_units, epochs, gpu):
     '''
-    Train a network
+    Train a network and save it in a checkpoint file
 
     Arguments:
-        data_directory
-        save_directory
-        network
-        learning_rate
-        hidden_units
-        epochs
-        gpu
+        data_directory (str): directory were data is stored
+        save_directory (str): directory to save checkpoint
+        network (str): network architecture to use
+        learning_rate (float): learning rate to use
+        hidden_units (int): hidden units to use
+        epochs (int): epochs to use
+        gpu (boolean): Enable the use of GPU
 
     Returns:
        None

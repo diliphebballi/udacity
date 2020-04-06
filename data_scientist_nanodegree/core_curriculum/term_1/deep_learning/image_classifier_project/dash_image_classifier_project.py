@@ -10,6 +10,7 @@ import plotly.graph_objs as go
 import base64
 import image_classifier_project
 
+
 DEFAULT_TOP_K = 5
 DEFAULT_MEDIA_DIRECTORY = 'media'
 EXTERNAL_STYLESHEETS = [
@@ -19,22 +20,19 @@ EXTERNAL_STYLESHEETS = [
         'rel': 'stylesheet',
         'integrity': 'sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u',
         'crossorigin': 'anonymous'
-    },
-    # 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css',
-    # {
-    #     'href': 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css',
-    #     'rel': 'stylesheet',
-    #     'integrity': 'sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp',
-    #     'crossorigin': 'anonymous'
-    # },
-    #'https://codepen.io/chriddyp/pen/bWLwgP.css'
-    #'https://codepen.io/chriddyp/pen/bWLwgP.css'
+    }
 ]
 
 
 def remove_all_file_from_folder(folder_path):
     '''
     Remove all file and subfolder from a folder
+
+    Arguments:
+        folder_path (str): folder path
+
+    Returns
+        None
     '''
     print('Remove all file from media folder\n\t{}'.format(DEFAULT_MEDIA_DIRECTORY))
     for file_object in os.listdir(folder_path):
@@ -49,6 +47,12 @@ def save_image(name, content):
     '''
     Decode and store a file uploaded with Plotly Dash
 
+    Arguments:
+        name (str): image name
+        content (str): image content
+
+    Returns
+        None
     '''
     image_filepath = os.path.join(DEFAULT_MEDIA_DIRECTORY, name)
     data = content.encode('utf8').split(b';base64,')[1]
@@ -59,6 +63,13 @@ def save_image(name, content):
 
 def get_encoded_image(image_filepath):
     '''
+    Get image encoded using base64
+
+    Arguments:
+        image_filepath (str): image filepath
+
+    Returns
+        encoded image(str): encoded image in string format
     '''
     encoded_image = base64.b64encode(open(image_filepath, 'rb').read())
     file_name, extension = image_filepath.split('.')
@@ -69,10 +80,12 @@ def _create_app():
     ''' 
     Creates dash application
 
+    Arguments:
+        None
+
     Returns:
         app (dash.Dash): Dash application
     '''
-
     app = dash.Dash(__name__, external_stylesheets = EXTERNAL_STYLESHEETS)
 
     print('Check if media folder present and if not create it\n\t{}'.format(DEFAULT_MEDIA_DIRECTORY))
@@ -135,9 +148,17 @@ def _create_app():
 
 
     def parse_contents(contents, filename, date):
-        '''
-        Parse loaded image
-        '''
+    ''' 
+    Parse loaded image
+
+    Arguments:
+        contents (str): image content in binary form
+        filename (str): image filename
+        date (str): loading image timestap 
+
+    Returns:
+        html.div (dash_html_components.Div): div containing the input image
+    '''
         return html.Div([
             #html.H5(filename)
             #, html.H6(datetime.datetime.fromtimestamp(date))
@@ -154,6 +175,14 @@ def _create_app():
     def update_output(list_of_contents, list_of_names, list_of_dates):
         '''
         Show loaded image
+
+        Arguments:
+            list_of_contents (list): list of uploaded images content
+            list_of_names (list): list of uploaded images names
+            list_of_dates (list): list of images loading timestap 
+
+        Returns:
+            children (dash_html_components.Div): html div to be updated
         '''
         if list_of_contents is not None:
             children = [parse_contents(c, n, d) for c, n, d in zip(list_of_contents, list_of_names, list_of_dates)]
@@ -165,7 +194,7 @@ def _create_app():
         '''
         Update the results section 
 
-        Args:
+        Arguments:
             n_click (int): value of n_clicks of button-submit
 
         Returns:

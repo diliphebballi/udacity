@@ -6,6 +6,7 @@ import argparse
 import classifier.train
 import predict
 
+
 DEFAULT_DATA_DIRECTORY = 'data'
 DEFAULT_TRAIN_DIRECTORY = DEFAULT_DATA_DIRECTORY + '/flowers/train'
 DEFAULT_TEST_DIRECTORY = DEFAULT_DATA_DIRECTORY + '/flowers/valid'
@@ -26,8 +27,11 @@ def parse_input_arguments():
     '''
     Parse the command line arguments
 
+    Arguments:
+        None
+
     Returns:
-        message (str): message to be classified
+        image (str): image path to be classified
     '''
     parser = argparse.ArgumentParser(description = "Image Classfier")
     parser.add_argument('--image', type = str, default = DEFAULT_TEST_IMAGE, help = 'Image to classify')
@@ -38,6 +42,14 @@ def parse_input_arguments():
 
 def load_classifier(checkpoint_filename = DEFAULT_CHECKPOINT_FILENAME):
     '''
+    Load the classifier. Train the network if needed
+
+    Arguments:
+        checkpoint_filename (str): checkpoint filename for loading the model
+
+    Returns:
+        model (object): model loaded from checkpoint
+        category_label_to_name (dict): dictionary for mapping category label to name
     '''
     print('Check if checkpoint model present\n\tCheckpoint: {}'.format(checkpoint_filename))
     if os.path.isfile(checkpoint_filename) == False:
@@ -53,6 +65,15 @@ def load_classifier(checkpoint_filename = DEFAULT_CHECKPOINT_FILENAME):
 
 def get_prediction(model, category_label_to_name, image_path):
     '''
+    Get the prediction probability for the image given in input
+
+    Arguments:
+        model (object): model to make predictions
+        category_label_to_name (dict): dictionary for mapping category label to name
+        image_path: path of the image to classify
+
+    Returns:
+        probability_category (dict): dictonary with predicted category and probability
     '''
     top_probabilities, top_classes = predict.get_prediction(image_path, model, top_k_probabilities = DEFAULT_TOP_K)
     probability_category = []
@@ -60,14 +81,29 @@ def get_prediction(model, category_label_to_name, image_path):
         probability_category.append((top_probabilities[i], category_label_to_name[top_classes[i]]))
     return dict((category, probability) for probability, category in probability_category) 
 
+
 def get_number_of_classes():
     '''
+    Return the number of classes used
+
+    Arguments:
+        None
+
+    Returns:
+        number_of_classes (int): number of classes used
     '''
     return classifier.train.get_number_of_classes(DEFAULT_TRAIN_DIRECTORY, DEFAULT_VALID_DIRECTORY, DEFAULT_TEST_DIRECTORY)
 
 
 def get_sample_from_training_dataset(category_label_to_name):
     '''
+    Get a sample from the training dataset
+
+    Arguments:
+        category_label_to_name (dict): dictionary for mapping category label to name
+
+    Returns:
+        category_sample (dict): dictonary with category and image path
     '''
     directories = os.listdir(DEFAULT_TRAIN_DIRECTORY)
     category_sample = []
