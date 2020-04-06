@@ -113,6 +113,9 @@ def get_sample_from_training_dataset(category_label_to_name):
     return dict((category, sample) for category, sample in category_sample) 
 
 
+#TODO: can be intresting to plot how many images we have for each class in the training dataset. Is the dataset unbalanced?
+
+
 if __name__ == '__main__':
     image_path = parse_input_arguments()
     model, category_label_to_name = load_classifier()
