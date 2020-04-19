@@ -1,5 +1,6 @@
 # Data dashboard dash application
 # The applicaation can be run stand alone or within a django web site using django_plotly_dash
+# Based on https://github.com/justdjango/My_Dashboard/tree/master/finance
 # python finance_data_dashboard.py
 
 import dash
