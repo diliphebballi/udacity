@@ -148,17 +148,17 @@ def _create_app():
 
 
     def parse_contents(contents, filename, date):
-    ''' 
-    Parse loaded image
+        ''' 
+        Parse loaded image
 
-    Arguments:
-        contents (str): image content in binary form
-        filename (str): image filename
-        date (str): loading image timestap 
+        Arguments:
+            contents (str): image content in binary form
+            filename (str): image filename
+            date (str): loading image timestap 
 
-    Returns:
-        html.div (dash_html_components.Div): div containing the input image
-    '''
+        Returns:
+            html.div (dash_html_components.Div): div containing the input image
+        '''
         return html.Div([
             #html.H5(filename)
             #, html.H6(datetime.datetime.fromtimestamp(date))
