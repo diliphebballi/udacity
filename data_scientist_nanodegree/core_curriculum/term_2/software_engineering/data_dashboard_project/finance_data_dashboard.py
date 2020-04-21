@@ -6,6 +6,7 @@
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
+import dash_bootstrap_components as dbc
 import dash_table
 import colorlover as cl
 import datetime as dt
@@ -23,6 +24,15 @@ DEFAULT_AVAILABLE_YEARS = 5
 DEFAULT_TICKERS = ['AAPL', 'MSFT']
 DEFAULT_INDICATORS = ['tot_revnu', 'gross_profit', 'ebitda']
 QUANDL_PERSONAL_KEY = ''
+EXTERNAL_STYLESHEETS = [
+    'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css',
+    {
+        'href': 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css',
+        'rel': 'stylesheet',
+        'integrity': 'sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u',
+        'crossorigin': 'anonymous'
+    }
+]
 
 colorscale = cl.scales['9']['qual']['Paired']
 time_dictionary = {'1W' : 7, '1M' : 30, '1Y' : 365, '5Y' : 1825} 
@@ -44,9 +54,9 @@ def _create_app(django_plotly_dash = False, ticker_filename = TICKER_FILENAME, i
     '''
 
     if django_plotly_dash == False:
-         app = dash.Dash(__name__)
+        app = dash.Dash(__name__, external_stylesheets = EXTERNAL_STYLESHEETS)
     else:
-        app = DjangoDash(APP_DJANGO_PLOTLY_DASH_NAME)
+        app = DjangoDash(APP_DJANGO_PLOTLY_DASH_NAME, add_bootstrap_links = True)
 
     df_ticker = pd.read_csv(ticker_filename)
     df_indicator = pd.read_csv(indicator_filename)
@@ -56,33 +66,53 @@ def _create_app(django_plotly_dash = False, ticker_filename = TICKER_FILENAME, i
     num_of_std_bollinger_bands = DEFAULT_NUM_OF_STD_BOLLINGER_BANDS
     list_year = np.arange(data_end_time.date().year, data_end_time.date().year - DEFAULT_AVAILABLE_YEARS, -1)
 
-    app.layout = html.Div([
-
-        html.Div([
-            html.Div([
-                html.H2('Quandle Finance Explorer'),
-                html.H3('Data available only to {}'.format(data_end_time.date())),
-                html.H3('Compare Stocks'),
-                dcc.Dropdown(id = 'dropdown-stock-tickers', options = [{'label': s[0], 'value': s[1]} for s in zip(df_ticker.Company_Name, df_ticker.Ticker)], value = DEFAULT_TICKERS, multi = True),
-                html.H3('Timescale'),
-                dcc.RadioItems(id = 'radioitems-timescale', options = [{'label': t, 'value': t} for t in time_dictionary], value = '1Y'),
-                html.H3('Bollinger bands parameters'),
-                dcc.Checklist(id = 'checklist-enable-bollinger-bands', options = [{'label': 'Enable', 'value': 'enable'}], value = ['enable']),
-                html.H4('Window size'),
-                dcc.Input(id = 'input-window-size-bollinger-bands', type = 'number', value = window_size_bollinger_bands),
-                html.H4('Number of standard deviation'),
-                dcc.Input(id = 'input-num-of-std-bollinger-bands', type = 'number', value = num_of_std_bollinger_bands),
-                html.H3('Graphs'),
-                html.Div(id = 'graphs'),
-                html.H3('Indicators'),
-                html.H4('Years'),
-                dcc.Dropdown(id = 'dropdown-years', options = [{'label': year, 'value': year} for year in list_year], value = [str(data_end_time.date().year), str(data_end_time.date().year - 1)], multi = True),
-                html.H4('Indicators'),
-                dcc.Dropdown(id = 'dropdown-indicators', options = [{'label': s[0], 'value': s[1]} for s in zip(df_indicator.Name, df_indicator.Column_Code)], value = DEFAULT_INDICATORS, multi = True),
-                html.Div(id = 'tables')         
-            ], className = 'col-sm-12')
-        ] , className = 'row'),
-    ], className = 'container-fluid')
+    app.layout = html.Div(
+        [
+            dbc.Nav(
+                [
+                    html.Div(
+                        [
+                            html.Div(
+                                [
+                                    html.A('Data dashboard', href='/', className = 'navbar-brand' )
+                                ], className = 'navbar-header')
+                            , html.Div(
+                                [
+                                    html.Ul(
+                                        [
+                                            html.Li(html.A('Made with Udacity', href='https://www.udacity.com/'))
+                                            , html.Li(html.A('Github', href='https://github.com/simonerigoni/udacity/tree/master/data_scientist_nanodegree/core_curriculum/term_2/software_engineering/data_dashboard_project'))
+                                        ], className = 'nav navbar-nav')
+                                ], className = 'collapse navbar-collapse')
+                        ], className = 'container')
+                ], className = 'navbar navbar-inverse navbar-fixed-top')
+            , html.Div(
+                [
+                    html.Div(
+                        [
+                            html.H2('Quandle Finance Explorer', className = 'text-center'),
+                            html.H3('Data available only to {}'.format(data_end_time.date())),
+                            html.H3('Compare Stocks'),
+                            dcc.Dropdown(id = 'dropdown-stock-tickers', options = [{'label': s[0], 'value': s[1]} for s in zip(df_ticker.Company_Name, df_ticker.Ticker)], value = DEFAULT_TICKERS, multi = True),
+                            html.H3('Timescale'),
+                            dcc.RadioItems(id = 'radioitems-timescale', options = [{'label': t, 'value': t} for t in time_dictionary], value = '1Y'),
+                            html.H3('Bollinger bands parameters'),
+                            dcc.Checklist(id = 'checklist-enable-bollinger-bands', options = [{'label': 'Enable', 'value': 'enable'}], value = ['enable']),
+                            html.H4('Window size'),
+                            dcc.Input(id = 'input-window-size-bollinger-bands', type = 'number', value = window_size_bollinger_bands),
+                            html.H4('Number of standard deviation'),
+                            dcc.Input(id = 'input-num-of-std-bollinger-bands', type = 'number', value = num_of_std_bollinger_bands),
+                            html.H3('Graphs'),
+                            html.Div(id = 'graphs'),
+                            html.H3('Indicators'),
+                            html.H4('Years'),
+                            dcc.Dropdown(id = 'dropdown-years', options = [{'label': year, 'value': year} for year in list_year], value = [str(data_end_time.date().year), str(data_end_time.date().year - 1)], multi = True),
+                            html.H4('Indicators'),
+                            dcc.Dropdown(id = 'dropdown-indicators', options = [{'label': s[0], 'value': s[1]} for s in zip(df_indicator.Name, df_indicator.Column_Code)], value = DEFAULT_INDICATORS, multi = True),
+                            html.Div(id = 'tables')         
+                        ], className = 'container')
+                ], className = 'jumbotron')
+        ], className = 'container')
 
     @app.callback(dash.dependencies.Output('graphs','children'), [dash.dependencies.Input('dropdown-stock-tickers', 'value'), 
                                                                     dash.dependencies.Input('radioitems-timescale', 'value'),
