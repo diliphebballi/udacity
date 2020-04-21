@@ -72,7 +72,7 @@ def get_encoded_image(image_filepath):
         encoded image(str): encoded image in string format
     '''
     encoded_image = base64.b64encode(open(image_filepath, 'rb').read())
-    file_name, extension = image_filepath.split('.')
+    file_name, extension = image_filepath.rsplit('.', 1)
     return 'data:image/{};base64,{}'.format(extension.lower(), encoded_image.decode())
 
 
@@ -93,6 +93,7 @@ def _create_app():
         os.makedirs(DEFAULT_MEDIA_DIRECTORY)
 
     model, category_label_to_name = image_classifier_project.load_classifier()
+    sample_training_dataset = image_classifier_project.get_sample_from_training_dataset(category_label_to_name)
 
     app.layout = html.Div(
         [
@@ -121,8 +122,8 @@ def _create_app():
                     , html.Hr()
                     , html.Div(
                         [
-                            html.Div(
-                                [
+                            #html.Div(
+                            #    [
                                     dcc.Upload(id = 'upload-image', children = html.Div(['Drag and Drop or ', html.A('Select File')]),
                                         style = {
                                             'width': '98%',
@@ -140,7 +141,7 @@ def _create_app():
                                     , html.Div(id = 'output-image-upload')
                                     , html.Hr()
                                     , html.Button('Classify Image', id = 'button-submit', className = 'btn btn-lg btn-success')
-                                ] , className = 'row')
+                                #] , className = 'row')
                         ] , className = 'container')
                 ], className = 'jumbotron')
             , html.Div(id = 'results')
@@ -203,7 +204,7 @@ def _create_app():
         results = []
         files = os.listdir(DEFAULT_MEDIA_DIRECTORY)
         number_of_classes = image_classifier_project.get_number_of_classes()
-        sample_training_dataset = image_classifier_project.get_sample_from_training_dataset(category_label_to_name)
+
         if len(files) == 0:
             results.append(html.Div(
                 [
@@ -254,6 +255,11 @@ def _create_app():
                         )
                         , style = {'height': 600}
                         , id = 'categories-distribution-graph')
+                    , html.Div(
+                        [
+                            html.Div([html.H3('Image to classify'), html.Img(src = get_encoded_image(image_filepath), style = {'height':'75%', 'width':'75%'})], className = 'col-sm-6')
+                            , html.Div([html.H3('Image from Training dataset for: {}'.format(list(category_probability.keys())[0])), html.Img(src = get_encoded_image(sample_training_dataset[list(category_probability.keys())[0]]), style = {'height':'75%', 'width':'75%'})], className = 'col-sm-6')
+                        ], className = 'row')
                 ]))
 
             remove_all_file_from_folder(DEFAULT_MEDIA_DIRECTORY)
