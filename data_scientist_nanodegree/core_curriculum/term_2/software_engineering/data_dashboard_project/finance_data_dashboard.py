@@ -90,8 +90,8 @@ def _create_app(django_plotly_dash = False, ticker_filename = TICKER_FILENAME, i
                 [
                     html.Div(
                         [
-                            html.H2('Quandle Finance Explorer', className = 'text-center'),
-                            html.H3('Data available only to {}'.format(data_end_time.date())),
+                            html.H1('Quandle Finance Explorer', className = 'text-center'),
+                            html.H4('Data available only to {}'.format(data_end_time.date())),
                             html.H3('Compare Stocks'),
                             dcc.Dropdown(id = 'dropdown-stock-tickers', options = [{'label': s[0], 'value': s[1]} for s in zip(df_ticker.Company_Name, df_ticker.Ticker)], value = DEFAULT_TICKERS, multi = True),
                             html.H3('Timescale'),
