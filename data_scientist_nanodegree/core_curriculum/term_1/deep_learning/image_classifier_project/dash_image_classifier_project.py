@@ -23,6 +23,12 @@ EXTERNAL_STYLESHEETS = [
     }
 ]
 
+dict_extension_signature = {'png' : '89504e470d0a'
+    , 'jpg' : 'ffd8ff'
+    , 'jpeg' : 'ffd8ff'
+    , 'bmp' : '424d'
+    , 'gif' : '47494638'
+    }                                                  
 
 def remove_all_file_from_folder(folder_path):
     '''
@@ -59,6 +65,58 @@ def save_image(name, content):
     with open(image_filepath, 'wb') as fp:
         print('Save uploaded image\n\t{}'.format(image_filepath))
         fp.write(base64.decodebytes(data))
+
+
+def check_extension_match_signature(content_base64, extension, header_bytes = 8):
+    '''
+    Check if the image extension matches the file signature
+
+    Arguments:
+        content (str): 
+        extension (str): 
+        header_bytes (int): 
+
+    Returns:
+        match (boolean): True if extension and signature mathces and False otherwise
+    '''
+    signature_hex = dict_extension_signature[extension]
+    signature_byte = bytearray.fromhex(signature_hex)
+    signature_base64 = base64.b64encode(signature_byte).decode()
+
+    #print(signature_hex)
+    #print(base64.b64decode(content_base64).hex()[0:len(signature_hex)]) 
+
+    if signature_hex == base64.b64decode(content_base64).hex()[0:len(signature_hex)]:
+        return True
+    else:
+        return False
+            
+
+def is_file_ok(name, content):
+    '''
+    Check the content of an image
+
+    Arguments:
+        name (str): image name
+        content (str): image content
+
+    Returns
+        ok (boolean): True if the image is ok and False otherwise
+    '''
+    file_name, extension = name.rsplit('.', 1)
+    if extension not in ['png', 'gif', 'jpg', 'jpeg', 'bmp']:
+        return False
+    else:
+        file_type, rest = content.split('/', 1)
+        image_type, rest = rest.split(';', 1)
+        base, rest = rest.split(',', 1)
+        #print(file_type)
+        #print(image_type)
+        #print(base)
+        if file_type != 'data:image' or image_type not in ['png', 'gif', 'jpg', 'jpeg', 'bmp'] or base != 'base64' :
+            return False
+        else:
+            return check_extension_match_signature(rest, extension)
 
 
 def get_encoded_image(image_filepath):
@@ -186,9 +244,15 @@ def _create_app():
             children (dash_html_components.Div): html div to be updated
         '''
         if list_of_contents is not None:
-            children = [parse_contents(c, n, d) for c, n, d in zip(list_of_contents, list_of_names, list_of_dates)]
-            save_image(list_of_names[0], list_of_contents[0])
-            return children[0]
+            content = list_of_contents[0]
+            name = list_of_names[0]
+            date = list_of_dates[0]
+            if is_file_ok(name, content):
+                children = parse_contents(content, name, date)
+                save_image(name, content)
+            else:
+                children = html.Div('An error occurred: Accepted only png, gif, jpg, jpeg or bmp image')
+            return children
 
     @app.callback(dash.dependencies.Output('results','children'), [dash.dependencies.Input('button-submit', 'n_clicks')])
     def update_results(n_click):
