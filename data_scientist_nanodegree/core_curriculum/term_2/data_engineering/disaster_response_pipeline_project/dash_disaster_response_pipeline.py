@@ -11,6 +11,7 @@ import plotly.graph_objs as go
 import disaster_response_pipeline
 
 
+MAX_INPUT_LENGTH = 512
 EXTERNAL_STYLESHEETS = [
     'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css',
     {
@@ -72,7 +73,7 @@ def _create_app():
                                 [
                                     html.Div(
                                         [
-                                            dcc.Input(id = 'input-message', type = 'text', value = '', placeholder='Enter a message to classify', className='form-control form-control-lg')
+                                            dcc.Input(id = 'input-message', type = 'text', value = '', placeholder = 'Enter a message to classify', maxLength = MAX_INPUT_LENGTH, className = 'form-control form-control-lg')
                                             , html.Hr()
                                             , html.Div(
                                                 [                 
