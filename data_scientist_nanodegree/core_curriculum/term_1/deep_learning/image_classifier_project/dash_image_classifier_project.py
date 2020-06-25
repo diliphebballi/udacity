@@ -223,7 +223,7 @@ def _create_app():
             #, html.H6(datetime.datetime.fromtimestamp(date))
             ## HTML images accept base64 encoded strings in the same format that is supplied by the upload
             # ,
-            html.Img(src = contents)
+            html.Img(src = contents, style = {'height':'75%', 'width':'75%'})
             #, html.Hr()
             #, html.Div('Raw Content')
             #, html.Pre(contents[0:200] + '...', style = {'whiteSpace': 'pre-wrap', 'wordBreak': 'break-all'})
