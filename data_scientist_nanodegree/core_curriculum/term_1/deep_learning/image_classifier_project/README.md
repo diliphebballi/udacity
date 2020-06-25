@@ -87,7 +87,7 @@ When an image is submitted with the **Classify Message** button the resulting ca
 
 ![Classification Result](images/classification_result.JPG)
 
-Results are better explained in this [blog post](https://medium.com/@simone.rigoni01/)
+Results are better explained in this [blog post](https://medium.com/@simone.rigoni01/do-you-know-this-flower-image-classifier-using-pytorch-1d45c3a3df1c)
 
 ## Licensing and Acknowledgements
 
