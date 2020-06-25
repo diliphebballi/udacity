@@ -23,7 +23,7 @@ DEFAULT_NUM_OF_STD_BOLLINGER_BANDS = 5
 DEFAULT_AVAILABLE_YEARS = 5
 DEFAULT_TICKERS = ['AAPL', 'MSFT']
 DEFAULT_INDICATORS = ['tot_revnu', 'gross_profit', 'ebitda']
-QUANDL_PERSONAL_KEY = ''
+QUANDL_PERSONAL_KEY = 'YOUR_QUANDL_PERSONAL_KEY'
 EXTERNAL_STYLESHEETS = [
     'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css',
     {
