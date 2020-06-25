@@ -62,7 +62,7 @@ The code is provided in a [Jupyter Notebook](http://ipython.org/notebook.html) t
     |-- README.md
 </pre>
 
-If you donwload Jupyter Notebook simply run the command `jupyter notebook image_classifier_project.ipynb` in the folder were the file is located to check out load data, Building and training the classifier an testing.
+If you download Jupyter Notebook simply run the command `jupyter notebook image_classifier_project.ipynb` in the folder were the file is located to check out load data, Building and training the classifier an testing.
 From the project folder run `python dash_image_classifier_project.py` to start the dash application. The default url to connect to it is http://127.0.0.1:8050/
 
 If the application does not find the **checkpoint.pth** checkpoint file to load the model it will train the model (save it in **classifier/checkpoint.pth**) to get the application ready to classify images in real time
