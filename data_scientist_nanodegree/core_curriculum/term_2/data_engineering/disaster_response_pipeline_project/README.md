@@ -138,6 +138,12 @@ As shown in the **Overview of Training Dataset** section the dataset is highly i
 
 Results are better explained in this [blog post](https://medium.com/@simone.rigoni01/disaster-response-pipeline-with-figure-eight-a0addd696352)
 
+## TODO
+
+* 0 - Delete this TODO section when all the tasks are working properly
+* 1 - In disaster_response_pipeline.py: check if table is present in the database
+
+
 ## Licensing and Acknowledgements
 
 Thank you [Figure Eight](https://www.figure-eight.com/) for the datasets and more information about the licensing of the data can be find [here](https://www.figure-eight.com/datasets/).
